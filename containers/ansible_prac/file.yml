@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: answorker
   become: true
   gather_facts: yes 
   tasks:
@@ -12,7 +12,7 @@
      state: touch
   - name: create directory
     file:
-     path: /mnt/minazul/
+     path: /tmp/minazul
      owner: root
      group: root
      mode: 0755
