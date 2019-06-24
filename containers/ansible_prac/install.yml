@@ -7,4 +7,3 @@
     apt:
      name: vim
      state: present
-     register: package
