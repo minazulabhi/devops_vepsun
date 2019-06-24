@@ -1,5 +1,5 @@
 ---
-- hosts: ansiworker[0:2]
+- hosts: localhost
   become: true
   gather_facts: yes 
   tasks:
