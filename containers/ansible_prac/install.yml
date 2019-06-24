@@ -7,6 +7,4 @@
     apt:
      name: vim
      state: present
-    register: package
-  - debug: 
-     msg: "{{package.stdout_lines}}"
+     register: package
