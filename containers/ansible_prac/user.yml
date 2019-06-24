@@ -1,11 +1,11 @@
 ---
- - hosts: ansiworker[0:2]
+ - hosts: answorker
    become: true
    gather_facts: yes
    tasks:
-   - name: Creating user "{{ username }}" with admin access
+   - name: Creating user test with admin access
      user:
-      name: "{{ username }}"
-      password: "{{ password }}"
+      name: "test"
+      password: "123456"
       groups: root
       append: yes
