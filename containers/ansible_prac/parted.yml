@@ -1,0 +1,10 @@
+---
+ - hosts: localhost
+   become: true
+   gather_facts: yes
+   tasks:
+   - name: Create a new primary partition
+     parted:
+      device: /dev/sda
+      number: 4
+      state: present

@@ -1,0 +1,12 @@
+---
+- hosts: ansiworker[0:2]
+  become: true
+  gather_facts: yes
+  tasks:
+  - name: install package
+    apt:
+     name: vim
+     state: present
+    register: package
+  - debug: 
+     msg: "{{package.stdout_lines}}"

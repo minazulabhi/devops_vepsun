@@ -1,1 +1,25 @@
-
+---
+- hosts: ansiworker[0:2]
+  become: true
+  gather_facts: yes 
+  tasks:
+  - name: file create
+    file:
+     path: /tmp/test.txt
+     owner: root
+     group: root
+     mode: 0755
+     state: touch
+  - name: create directory
+    file:
+     path: /mnt/minazul/
+     owner: root
+     group: root
+     mode: 0755
+     state: directory
+     recurse: yes
+#  - name: disk sapce
+#    command: df -h
+#    register: disk
+#  - debug:
+#      msg: "{{disk.stdout_lines}}"
